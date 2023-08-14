@@ -1,0 +1,10 @@
+
+<div class="content">
+
+<mat-grid-list cols="5" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let game of gameList">
+        <app-games-block [gameData]="game"></app-games-block>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+</div>
