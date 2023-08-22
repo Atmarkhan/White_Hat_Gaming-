@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren } from '@angular/core';
+import { GameListComponent } from './game-list/game-list.component'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'whitehet';
+  title = 'white Hat';
+  gameFilter : string = 'new'
+
+  
 }
+

@@ -1,9 +1,6 @@
 <div class="block">
-    
-
-        <img src="{{gameData.image}}"  class="image">
-
-
+    <div class="ribbon" *ngIf="ribbon=== 'top' || ribbon === 'new'" > <span>{{ribbon}}</span>  </div>
+        <img src="{{gameData.image}}" class="image" >
     <p>{{gameData.name}}</p>
 </div>
 

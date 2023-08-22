@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {GameListComponent} from './game-list/game-list.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'gamelist', pathMatch: 'full'},
+  {path: '', redirectTo: 'gamelist?game=new', pathMatch: 'full'},
   {path: 'gamelist', component: GameListComponent,}
   
 ];

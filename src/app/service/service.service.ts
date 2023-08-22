@@ -11,4 +11,7 @@ export class ServiceService {
   getGameList() {
     return this.http.get('http://stage.whgstage.com/front-end-test/games.php');
   }
+  jackPot () {
+    return this.http.get('http://stage.whgstage.com/front-end-test/jackpots.php');
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ServiceService } from '../service/service.service';
 
 
@@ -8,7 +8,10 @@ import { ServiceService } from '../service/service.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-  menuOptions: string[] = [];
+  menuOptions: any[] = [];
+
+
+  @Output() gameFilter = new EventEmitter<any>();
 
   constructor(private service: ServiceService) {}
   ngOnInit(): void{
@@ -34,12 +37,17 @@ export class HeaderComponent implements OnInit{
 
         const title = item.title === 'top' ? 'Top Games ': item.title === 'new' ? 'New Games': item.title
 
-        this.menuOptions.push(title);
+        this.menuOptions.push({title: title, path:item.title.toLowerCase()});
       }
     });
   }
 
   capitalize(text: string) {
     return text.charAt(0).toLocaleUpperCase() + text.slice(1);
+  }
+  menuClik(menu: string) {
+    const menuPath = menu.split(' ')[0].toLowerCase();
+    
+    this.gameFilter.emit(menuPath)
   }
 }
