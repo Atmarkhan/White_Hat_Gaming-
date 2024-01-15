@@ -1,6 +1,12 @@
-<div class="topbar"></div>
+<!-- <div class="topbar"></div>
 <div class="header">
     <a href="/gamelist?game={{menu.path}}" *ngFor="let menu of menuOptions" class="menuItem">{{capitalize(menu.title)}}</a>
-    <!-- <label class="menuItem" *ngFor="let menu of menuOptions" (click)="menuClik(menu)">{{capitalize(menu)}}</label> -->
-</div>
+    
+</div> -->
+
+
+<div class="topbar"></div>
+<nav>
+    <a href="/gamelist?game={{menu.path}}" *ngFor="let menu of menuOptions" class="menuItem">{{capitalize(menu.title)}}</a>
+</nav>
 

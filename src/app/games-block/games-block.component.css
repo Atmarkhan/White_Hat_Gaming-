@@ -6,7 +6,7 @@
 }
 
 .image{
-    width: 100%;
+    width: 93.5%;
     border-radius: 15px;
     padding: 5px;
     display: block;
@@ -29,7 +29,7 @@
     text-align: right;
   }
   .ribbon span {
-    font-size: 10px;
+    font-size: 15px;
     font-weight: bold;
     color: #FFF;
     text-transform: uppercase;
@@ -37,7 +37,7 @@
     line-height: 20px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    width: 100px;
+    width: 109px;
     display: block;
     background: #79A70A;
     background: linear-gradient(#8DC63F 0%, #79A70A 100%);
@@ -62,4 +62,18 @@
     border-right: 3px solid #79A70A;
     border-bottom: 3px solid transparent;
     border-top: 3px solid #79A70A;
+  }
+  .jackpot_tag{
+    position: absolute;
+    top: 5px;
+    padding: 10px;
+    width: 80%;
+    margin-left: 10px;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
   }

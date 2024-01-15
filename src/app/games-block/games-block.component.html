@@ -1,6 +1,9 @@
 <div class="block">
-    <div class="ribbon" *ngIf="ribbon=== 'top' || ribbon === 'new'" > <span>{{ribbon}}</span>  </div>
+    <div class="ribbon" *ngIf="ribbon === 'top' || ribbon === 'new'" > <span>{{ribbon}}</span></div>
         <img src="{{gameData.image}}" class="image" >
+
+        <div class="jackpot_tag" *ngIf="gameData" >{{gameData.amount | currency:'GBP'}}</div>
+       
     <p>{{gameData.name}}</p>
 </div>
 

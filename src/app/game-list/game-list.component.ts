@@ -2,13 +2,21 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { ServiceService } from '../service/service.service';
 import { ActivatedRoute } from '@angular/router';
 
+type gameType = {
+  categories: any[];
+  id: string;
+  image: string;
+  name: string;
+  amount: number;
+};
+
 @Component({
   selector: 'app-game-list',
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.css'],
 })
 export class GameListComponent implements OnInit {
-  gameList: any[] = [];
+  gameList: gameType[] = [];
 
   gameFilter: string = 'new';
   interval: any;
@@ -37,6 +45,13 @@ export class GameListComponent implements OnInit {
               game.categories.indexOf('fun') !== -1))
         ) {
           // || gameFilter === 'others'
+          games.push({
+            categories: game.categories,
+            id: game.id,
+            image: game.image,
+            name: game.name,
+            amount: 0,
+          });
           games.push(game);
         }
       }
@@ -47,10 +62,10 @@ export class GameListComponent implements OnInit {
   get_jackpot() {
     this.service.jackPot().subscribe((data: any) => {
       for (const row of data) {
-        const stor = this.gameList.find((x) => x.id === row.game);
-        if (stor) {
-          stor.amount = row.amount;
-          console.log(stor);
+        const game = this.gameList.find((x) => x.id === row.game);
+        if (game) {
+          game.amount = row.amount;
+          // console.log(game);
         }
       }
     });
